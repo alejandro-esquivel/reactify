@@ -5,7 +5,6 @@ function App() {
 
   return (
     <>
-      <p className="text-slate-900">App</p>
       <ReactionForm></ReactionForm>
     </>
   )
