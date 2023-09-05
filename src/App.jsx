@@ -12,19 +12,19 @@ function App() {
     },
     {
       id: 2,
-      url: 'https://media.tenor.com/sCsJ0l1gxHUAAAAd/cat-meme.gif'
+      url: 'https://media.tenor.com/XYoSW_Rk8bIAAAAC/sus-bird-meme.gif'
     },
     {
       id: 3,
-      url: 'https://media.tenor.com/fTTVgygGDh8AAAAC/kitty-cat-sandwich.gif'
+      url: 'https://i.gifer.com/2GU.gif'
     },
     {
       id: 4,
-      url: 'https://media.tenor.com/sCsJ0l1gxHUAAAAd/cat-meme.gif'
+      url: 'https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif'
     },
     {
       id: 5,
-      url: 'https://media.tenor.com/fTTVgygGDh8AAAAC/kitty-cat-sandwich.gif'
+      url: 'https://i.chzbgr.com/full/9204612608/h339C1D32/cat'
     },
     {
       id: 6,
