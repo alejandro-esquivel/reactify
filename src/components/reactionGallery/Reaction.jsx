@@ -7,7 +7,7 @@ import CopyOverlay from "./copyOverlay";
 function Reaction(props) {
   const { reaction } = props;
   const isMobile = useIsMobile();
-  const [isHover, setIsHover] = useState(true);
+  const [isHover, setIsHover] = useState(false);
 
   useEffect(() => {
     if (isMobile)
