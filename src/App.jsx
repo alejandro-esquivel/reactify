@@ -8,26 +8,22 @@ function App() {
   const [mediaList, setMediaList] = useState([
     {
       id: 1,
-      url: 'https://media.tenor.com/fTTVgygGDh8AAAAC/kitty-cat-sandwich.gif'
-    },
-    {
-      id: 2,
       url: 'https://media.tenor.com/XYoSW_Rk8bIAAAAC/sus-bird-meme.gif'
     },
     {
-      id: 3,
+      id: 2,
       url: 'https://i.gifer.com/2GU.gif'
     },
     {
-      id: 4,
+      id: 3,
       url: 'https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif'
     },
     {
-      id: 5,
+      id: 4,
       url: 'https://i.chzbgr.com/full/9204612608/h339C1D32/cat'
     },
     {
-      id: 6,
+      id: 5,
       url: 'https://media.tenor.com/sCsJ0l1gxHUAAAAd/cat-meme.gif'
     },
   ]);
