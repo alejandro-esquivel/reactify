@@ -30,8 +30,10 @@ function App() {
 
   const addNewMedia = function (newMedia) {
     setMediaList(prevMedia => {
-      return { ...prevMedia, newMedia }
-    })
+      return [...prevMedia, { id: newMedia, url: newMedia }]
+    });
+
+    console.log(mediaList);
   }
 
   return (
