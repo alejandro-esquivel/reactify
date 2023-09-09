@@ -3,7 +3,7 @@ import ReactionForm from "./components/reactionForm/ReactionForm"
 import ReactionGallery from "./components/reactionGallery/ReactionGallery";
 
 function App() {
-  const [mediaList, setMediaList] = useState([
+  const [mediaList, setMediaList] = useState(JSON.parse(localStorage.getItem('mediaList')) || [
     {
       id: 1,
       url: 'https://media.tenor.com/XYoSW_Rk8bIAAAAC/sus-bird-meme.gif'
@@ -30,13 +30,10 @@ function App() {
     },
   ]);
 
-  if (localStorage.getItem('mediaList')) {
-    setMediaList(JSON.parse(localStorage.getItem('mediaList')))
-  }
-
   useEffect(() => {
     console.log("mediaList changed");
-    // localStorage.setItem('mediaList', JSON.stringify(mediaList));
+    localStorage.setItem('mediaList', JSON.stringify(mediaList));
+    console.log(JSON.parse(localStorage.getItem('mediaList')));
   }, [mediaList])
 
 
