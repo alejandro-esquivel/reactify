@@ -8,7 +8,7 @@ function ReactionUrlInput(props) {
 
   const onMediaSubmit = (e) => {
     e.preventDefault();
-    if (url.current.value.length > 1) {
+    if (url.current.value.length > 0) {
       reactionSubmit(url.current.value)
       url.current.value = '';
     }

@@ -1,10 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactionForm from "./components/reactionForm/ReactionForm"
 import ReactionGallery from "./components/reactionGallery/ReactionGallery";
 
-
 function App() {
-  //const [count, setCount] = useState(0);
   const [mediaList, setMediaList] = useState([
     {
       id: 1,
@@ -26,14 +24,26 @@ function App() {
       id: 5,
       url: 'https://media.tenor.com/sCsJ0l1gxHUAAAAd/cat-meme.gif'
     },
+    {
+      id: 6,
+      url: 'https://media.tenor.com/FuYhS1n_c0IAAAAC/cat-piano.gif'
+    },
   ]);
+
+  if (localStorage.getItem('mediaList')) {
+    setMediaList(JSON.parse(localStorage.getItem('mediaList')))
+  }
+
+  useEffect(() => {
+    console.log("mediaList changed");
+    // localStorage.setItem('mediaList', JSON.stringify(mediaList));
+  }, [mediaList])
+
 
   const addNewMedia = function (newMedia) {
     setMediaList(prevMedia => {
       return [...prevMedia, { id: newMedia, url: newMedia }]
     });
-
-    console.log(mediaList);
   }
 
   return (
