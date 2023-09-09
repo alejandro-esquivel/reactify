@@ -30,14 +30,10 @@ const exampleMedia = [
 ]
 
 function App() {
-
-
   const [mediaList, setMediaList] = useState(JSON.parse(localStorage.getItem('mediaList')) || exampleMedia);
 
   useEffect(() => {
-    console.log("mediaList changed");
     localStorage.setItem('mediaList', JSON.stringify(mediaList));
-    console.log(JSON.parse(localStorage.getItem('mediaList')));
   }, [mediaList])
 
 
