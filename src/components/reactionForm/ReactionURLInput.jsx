@@ -6,11 +6,12 @@ function ReactionUrlInput(props) {
   const { reactionSubmit } = props;
   const url = useRef(null);
 
-
   const onMediaSubmit = (e) => {
     e.preventDefault();
-    reactionSubmit(url.current.value)
-    url.current.value = '';
+    if (url.current.value.length > 1) {
+      reactionSubmit(url.current.value)
+      url.current.value = '';
+    }
   }
 
   return (
@@ -19,8 +20,8 @@ function ReactionUrlInput(props) {
         name="mediaURL"
         id="mediaURL"
         ref={url}
-        className="relative w-full px-4 text-xl transition duration-150 border-none rounded-lg focus:ring-slate-400 focus:ring-4 focus:outline-none bg-slate-700 text-gray-50 peer" />
-      <button id="mediaSubmit" title="Submit media" className="absolute right-2.5 bottom-2.5 flex items-center justify-center  rounded-lg bg-blue-500 peer-focus:outline-green-400 peer-focus:outline-2 text-gray-50 px-4 py-1.5 hover:ring-blue-300 hover:ring-2 hover:outline-none focus:outline-none focus:ring-blue-300 focus:ring-2 "
+        className="relative w-full px-4 text-xl transition duration-150 border-none rounded-lg focus:ring-slate-400 focus:ring-4 focus:outline-none bg-slate-700 text-gray-50 " />
+      <button id="mediaSubmit" title="Submit media" className="absolute right-2.5 bottom-2.5 flex items-center justify-center  rounded-lg bg-blue-500 text-gray-50 px-4 py-1.5 hover:ring-blue-300 hover:ring-2 hover:outline-none focus:outline-none focus:ring-blue-300 focus:ring-2 "
         onClick={onMediaSubmit}>
         Add media
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 ml-2 stroke-gray-50">
