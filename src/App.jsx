@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ReactionForm from "./components/reactionForm/ReactionForm"
 import ReactionGallery from "./components/reactionGallery/ReactionGallery";
+import useLocalStorage from './utils/useLocalStorage';
 
 const exampleMedia = [
   {
@@ -30,7 +31,7 @@ const exampleMedia = [
 ]
 
 function App() {
-  const [mediaList, setMediaList] = useState(JSON.parse(localStorage.getItem('mediaList')) || exampleMedia);
+  const [mediaList, setMediaList] = useLocalStorage('mediaList', exampleMedia);
 
   useEffect(() => {
     localStorage.setItem('mediaList', JSON.stringify(mediaList));
