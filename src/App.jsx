@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import ReactionForm from "./components/reactionForm/ReactionForm"
 import ReactionGallery from "./components/reactionGallery/ReactionGallery";
 import useLocalStorage from './utils/useLocalStorage';
@@ -48,7 +48,7 @@ function App() {
     <>
       <h1 className="mt-16 font-semibold text-center text-7xl text-slate-50 ">Reactify</h1>
       <ReactionForm onMediaAdd={addNewMedia}></ReactionForm>
-      <ReactionGallery media={mediaList}></ReactionGallery>
+      {mediaList.length > 0 ? <ReactionGallery media={mediaList} /> : ""}
     </>
   )
 }

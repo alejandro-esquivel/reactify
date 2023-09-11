@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 //import useIsMobile from "../../utils/useIsMobile";
 import { useState } from "react";
-import CopyOverlay from "./copyOverlay";
+import CopyOverlay from "./CopyOverlay";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 //import MobileShare from "./MobileShare";
 
@@ -20,7 +20,7 @@ function Reaction(props) {
 
   return (
     <article className="relative w-full p-2 rounded lg:w-4/12" onMouseEnter={setHoverEnter} onMouseLeave={setHoverLeave} >
-      <LazyLoadImage src={reaction.url} alt="" className="object-cover w-full h-full rounded" />
+      <LazyLoadImage src={reaction.url} alt="" className="object-cover w-full h-full rounded"  />
       <CopyOverlay url={reaction.url} hoverState={isHover} />
       {/*isMobile ? <MobileShare url={reaction.url} /> : <CopyOverlay url={reaction.url} hoverState={isHover} />*/}
     </article>
