@@ -1,9 +1,6 @@
 import PropTypes from "prop-types";
-import { useEffect } from "react";
 
 function MobileShare(props) {
-
-  useEffect(() => console.log(props))
 
   function shareImage() {
     navigator.share({

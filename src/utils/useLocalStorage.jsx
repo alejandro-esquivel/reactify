@@ -12,4 +12,3 @@ function useLocalStorage(key, fallbackState) {
 }
 
 export default useLocalStorage;
-

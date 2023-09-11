@@ -46,6 +46,7 @@ function App() {
 
   return (
     <>
+      <h1 className="mt-16 font-semibold text-center text-7xl text-slate-50 ">Reactify</h1>
       <ReactionForm onMediaAdd={addNewMedia}></ReactionForm>
       <ReactionGallery media={mediaList}></ReactionGallery>
     </>

@@ -19,7 +19,7 @@ function Reaction(props) {
 
   return (
     <article className="relative w-full p-2 rounded lg:w-4/12" onMouseEnter={setHoverEnter} onMouseLeave={setHoverLeave} >
-      <img src={reaction.url} alt="" className="object-cover w-full h-full rounded" />
+      <img src={reaction.url} alt="" className="object-cover w-full h-full rounded" loading="lazy" />
       <CopyOverlay url={reaction.url} hoverState={isHover} />
       {/*isMobile ? <MobileShare url={reaction.url} /> : <CopyOverlay url={reaction.url} hoverState={isHover} />*/}
     </article>
