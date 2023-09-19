@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import ReactionForm from "./components/reactionForm/ReactionForm"
 import ReactionGallery from "./components/reactionGallery/ReactionGallery";
 import useLocalStorage from './utils/useLocalStorage';
+import { MediaContextProvider } from './providers/mediaContext';
 
 const exampleMedia = [
   {
@@ -45,11 +46,11 @@ function App() {
   }
 
   return (
-    <>
+    <MediaContextProvider>
       <h1 className="mt-16 font-semibold text-center text-7xl text-slate-50 ">Reactify</h1>
       <ReactionForm onMediaAdd={addNewMedia}></ReactionForm>
       {mediaList.length > 0 ? <ReactionGallery media={mediaList} /> : ""}
-    </>
+    </MediaContextProvider>
   )
 }
 
