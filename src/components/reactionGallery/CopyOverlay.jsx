@@ -1,17 +1,25 @@
+import { useContext } from "react";
 import PropTypes from "prop-types";
+import MediaContext from "../../providers/mediaContext";
 
 function CopyOverlay(props) {
-  const { url } = props;
-  const { hoverState: isHover } = props;
+  const { url, mediaId } = props;
+  const mediaCTX = useContext(MediaContext);
 
   const urlCopy = () => {
     navigator.clipboard.writeText(url);
   }
 
+  const mediaDelete = () => {
+    mediaCTX.onMediaDelete(mediaId);
+  }
+
+
+
   return (
-    <div className={`${isHover ? "bg-opacity-50" : "bg-opacity-0"} bg-slate-700 transition duration-75 absolute top-0 left-0 flex object-cover w-full h-full p-2 m-0 rounded items-center justify-center  bg-clip-content }`}>
-      <button className={`${isHover ? "block" : "hidden"} rounded-lg bg-blue-500 peer-focus:outline-green-400 peer-focus:outline-2 text-gray-50 px-4 py-2 hover:ring-blue-300 hover:ring-2 focus:ring-blue-300 focus:ring-2 shadow-lg`} onClick={urlCopy} onTouchEnd={urlCopy}>Copy URL</button>
-      <button className={`${isHover ? "block" : "hidden"} rounded-lg bg-blue-500 peer-focus:outline-green-400 peer-focus:outline-2 text-gray-50 px-4 py-2 hover:ring-blue-300 hover:ring-2 focus:ring-blue-300 focus:ring-2 shadow-lg`} onClick={urlCopy} onTouchEnd={urlCopy}>Delete Media</button>
+    <div className={`bg-opacity-50 bg-slate-700 transition duration-75 absolute top-0 left-0 flex object-cover w-full h-full p-2 m-0 rounded items-center justify-center  bg-clip-content }`}>
+      <button className={`rounded-lg bg-blue-500  text-gray-50 px-4 py-2 hover:ring-blue-300 hover:ring-2 focus:ring-blue-300 focus:ring-2 shadow-lg`} onClick={urlCopy} onTouchEnd={urlCopy}>Copy URL</button>
+      <button className={`ml-4 rounded-lg bg-red-500  text-gray-50 px-4 py-2 hover:ring-red-300 hover:ring-2 focus:ring-blue-300 focus:ring-2 shadow-lg`} onClick={mediaDelete} onTouchEnd={mediaDelete}>Delete Media</button>
     </div>
   )
 }
@@ -20,5 +28,5 @@ export default CopyOverlay;
 
 CopyOverlay.propTypes = {
   url: PropTypes.string,
-  hoverState: PropTypes.bool
+  mediaId: PropTypes.any
 }

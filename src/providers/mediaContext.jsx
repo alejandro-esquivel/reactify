@@ -32,7 +32,7 @@ const exampleMedia = [
 const MediaContext = createContext({
   mediaList: [],
   onMediaAdd: () => { },
-  onMediaRemove: () => { }
+  onMediaDelete: () => { }
 });
 
 export const MediaContextProvider = function (props) {
@@ -40,13 +40,19 @@ export const MediaContextProvider = function (props) {
 
   const newMediaHandler = function (newMedia) {
     setMediaList(prevMedia => {
-      return [...prevMedia, { id: newMedia, url: newMedia }]
+      // Get current timestamp to prevent images from having the same ID when someone inputs the same URL twice.
+      const currentTimestamp = Math.floor(Date.now() / 1000);
+      const newId = newMedia + currentTimestamp;
+
+      return [...prevMedia, { id: newId, url: newMedia }]
     });
   }
 
-  const deleteMediaHandler = function (media) {
+  const deleteMediaHandler = function (mediaId) {
     setMediaList(prevMedia => {
-      return prevMedia.Filter(prevMediaId => prevMediaId === media.id)
+      return prevMedia.filter(mediaObject => {
+        return mediaObject.id !== mediaId
+      })
     });
   }
 

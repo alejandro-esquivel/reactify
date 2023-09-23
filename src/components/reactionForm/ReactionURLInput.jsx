@@ -1,15 +1,14 @@
+import { useRef, useContext } from 'react';
 import PropTypes from 'prop-types'
-import { useRef } from 'react';
+import MediaContext from '../../providers/mediaContext';
 
-
-function ReactionUrlInput(props) {
-  const { reactionSubmit } = props;
+function ReactionUrlInput() {
   const url = useRef(null);
+  const mediaCTX = useContext(MediaContext);
 
-  const onMediaSubmit = (e) => {
-    e.preventDefault();
+  const onMediaSubmit = () => {
     if (url.current.value.length > 0) {
-      reactionSubmit(url.current.value)
+      mediaCTX.onMediaAdd(url.current.value)
       url.current.value = '';
     }
   }

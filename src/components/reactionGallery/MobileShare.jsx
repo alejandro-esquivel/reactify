@@ -10,7 +10,7 @@ function MobileShare(props) {
     }).then(() => {
       // Success
     }).error((err) => {
-      console.log(err);
+      // console.log(err);
     });
   }
 

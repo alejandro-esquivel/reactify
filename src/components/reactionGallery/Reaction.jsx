@@ -6,7 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 //import MobileShare from "./MobileShare";
 
 function Reaction(props) {
-  const { reaction } = props;
+  const { reaction, id } = props;
   const [isHover, setIsHover] = useState(false);
   //const isMobile = useIsMobile();
 
@@ -20,8 +20,9 @@ function Reaction(props) {
 
   return (
     <article className="relative w-full p-2 rounded lg:w-4/12" onMouseEnter={setHoverEnter} onMouseLeave={setHoverLeave} >
-      <LazyLoadImage src={reaction.url} alt="" className="object-cover w-full h-full rounded"  />
-      <CopyOverlay url={reaction.url} hoverState={isHover} />
+      <LazyLoadImage src={reaction.url} alt="" className="object-cover w-full h-full rounded" />
+      {isHover ? <CopyOverlay url={reaction.url}  mediaId={id} /> : ''}
+
       {/*isMobile ? <MobileShare url={reaction.url} /> : <CopyOverlay url={reaction.url} hoverState={isHover} />*/}
     </article>
   )
@@ -30,6 +31,6 @@ function Reaction(props) {
 export default Reaction;
 
 Reaction.propTypes = {
-  className: PropTypes.string,
-  reaction: PropTypes.object
+  reaction: PropTypes.object,
+  id: PropTypes.any
 }

@@ -1,17 +1,16 @@
+import { useContext } from 'react';
 import Reaction from "./Reaction";
-import PropTypes from "prop-types";
+import MediaContext from '../../providers/mediaContext';
 
-function ReactionList(props) {
-  const { media } = props;
+function ReactionList() {
+  const mediaCTX = useContext(MediaContext);
+
   return (
     <>
-      {media.map(reaction => <Reaction key={reaction.id} reaction={reaction} ></Reaction>)}
+      {mediaCTX.mediaList.map(reaction => <Reaction key={reaction.id} reaction={reaction} id={reaction.id} ></Reaction>)}
     </>
   )
 }
 
 export default ReactionList;
 
-ReactionList.propTypes = {
-  media: PropTypes.array,
-}
