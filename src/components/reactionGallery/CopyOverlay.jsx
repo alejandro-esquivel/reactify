@@ -9,12 +9,9 @@ function CopyOverlay(props) {
   const urlCopy = () => {
     navigator.clipboard.writeText(url);
   }
-
   const mediaDelete = () => {
     mediaCTX.onMediaDelete(mediaId);
   }
-
-
 
   return (
     <div className={`bg-opacity-50 bg-slate-700 transition duration-75 absolute top-0 left-0 flex object-cover w-full h-full p-2 m-0 rounded items-center justify-center  bg-clip-content }`}>
