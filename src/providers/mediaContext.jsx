@@ -17,7 +17,7 @@ const exampleMedia = [
   },
   {
     id: 4,
-    url: 'https://i.chzbgr.com/full/9204612608/h339C1D32/cat'
+    url: 'https://i.imgur.com/Qi7JQVe.mp4'
   },
   {
     id: 5,
