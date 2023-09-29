@@ -1,10 +1,12 @@
 import { useRef, useContext } from 'react';
 import PropTypes from 'prop-types'
 import MediaContext from '../../providers/mediaContext';
+import useIsSmallScreen from '../../utils/useIsSmallScreen';
 
 function ReactionUrlInput() {
   const url = useRef(null);
   const mediaCTX = useContext(MediaContext);
+  const isSmallScreen = useIsSmallScreen();
 
   const onMediaSubmit = () => {
     if (url.current.value.length > 0) {
@@ -30,8 +32,9 @@ function ReactionUrlInput() {
         className="relative w-full px-4 text-xl transition duration-150 border-none rounded-lg pr-44 lg:pr-52 focus:ring-slate-400 focus:ring-4 focus:outline-none text-slate-800 " />
       <button id="mediaSubmit" title="Submit media" className="absolute right-2.5 bottom-2.5 flex items-center justify-center  rounded-lg bg-blue-500 text-gray-50 px-4 py-1.5 hover:ring-blue-300 hover:ring-2 hover:outline-none focus:outline-none focus:ring-blue-300 focus:ring-2 "
         onClick={onMediaSubmit}>
-        Add media
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 ml-2 stroke-gray-50">
+        {(isSmallScreen) ? '' : "Add media"}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+          className={` w-8 h-8 stroke-gray-50 ${isSmallScreen ? '' : 'ml-2'}`}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       </button>

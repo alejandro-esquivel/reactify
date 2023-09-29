@@ -12,8 +12,6 @@ function Reaction(props) {
   //const isMobile = useIsMobile();
 
   useEffect(() => {
-    console.log(reaction.url.slice(-3))
-
     if (reaction.url.slice(-3) === 'gif') {
       setIsGif(true);
     }
