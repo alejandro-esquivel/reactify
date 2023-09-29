@@ -13,6 +13,12 @@ function ReactionUrlInput() {
     }
   }
 
+  const onEnterKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      onMediaSubmit();
+    }
+  }
+
   return (
     <div className="relative flex flex-row justify-center w-full min-h-full gap-0 shadow-lg shadow-slate-600/50">
       <input type="url"
@@ -20,6 +26,7 @@ function ReactionUrlInput() {
         id="mediaURL"
         ref={url}
         placeholder="Image URL..."
+        onKeyDown={onEnterKeyPress}
         className="relative w-full px-4 text-xl transition duration-150 border-none rounded-lg pr-44 lg:pr-52 focus:ring-slate-400 focus:ring-4 focus:outline-none text-slate-800 " />
       <button id="mediaSubmit" title="Submit media" className="absolute right-2.5 bottom-2.5 flex items-center justify-center  rounded-lg bg-blue-500 text-gray-50 px-4 py-1.5 hover:ring-blue-300 hover:ring-2 hover:outline-none focus:outline-none focus:ring-blue-300 focus:ring-2 "
         onClick={onMediaSubmit}>
