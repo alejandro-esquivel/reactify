@@ -39,6 +39,12 @@ export const MediaContextProvider = function (props) {
   const [mediaList, setMediaList] = useLocalStorage('mediaList', exampleMedia);
 
   const newMediaHandler = function (newMedia) {
+    // Returns unchanged medialist whenever the user enters a non-valid media URL.
+    if (!(/.gif|.mp4/.test(newMedia))) {
+      alert('The entered media is not valid');
+      return mediaList
+    }
+
     setMediaList(prevMedia => {
       // Get current timestamp to prevent images from having the same ID when someone inputs the same URL twice.
       const currentTimestamp = Math.floor(Date.now() / 1000);
