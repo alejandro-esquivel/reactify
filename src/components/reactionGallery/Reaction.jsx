@@ -12,7 +12,7 @@ function Reaction(props) {
   //const isMobile = useIsMobile();
 
   useEffect(() => {
-    if (reaction.url.slice(-3) === 'gif') {
+    if (reaction.url.includes('.gif')) {
       setIsGif(true);
     }
   }, [])
