@@ -40,7 +40,7 @@ export const MediaContextProvider = function (props) {
 
   const newMediaHandler = function (newMedia) {
     // Returns unchanged medialist whenever the user enters a non-valid media URL.
-    if (!(/.gif|.mp4/.test(newMedia))) {
+    if (!(/.gif|.mp4|.png|.jpg|.webp/.test(newMedia))) {
       alert('The entered media is not valid');
       return mediaList
     }

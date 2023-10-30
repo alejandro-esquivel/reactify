@@ -12,7 +12,8 @@ function Reaction(props) {
   //const isMobile = useIsMobile();
 
   useEffect(() => {
-    if (reaction.url.includes('.gif')) {
+    // if (reaction.url.includes('.gif')) {
+    if ((/.gif|.png|.jpg|.webp/.test(reaction.url))) {
       setIsGif(true);
     }
   }, [])
