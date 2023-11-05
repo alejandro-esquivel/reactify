@@ -1,15 +1,15 @@
 # Reactify
 
-Reactify is a web application that allows you to store and share GIFs effortlessly. With Reactify, you can easily add GIFs to your collection by entering their URLs into the app's input field. Share your favorite GIFs with friends, organize your collection, and discover new and exciting GIFs from the web.
+Reactify is a web application that allows you to store and share media effortlessly. With Reactify, you can easily add images, gifs and videos to your collection by entering their URLs into the app's input field. Organize your collection and share your favorite media with friends.
 
 ![Reactify Screenshot](https://i.imgur.com/xTlLE7N.png)
 
 ## Features
 
-- **Add GIFs**: Enter GIF URLs to add them to your collection.
-- **Share**: Share your GIFs with others by sharing the GIF's URL.
+- **Add media**: Enter the URL of the media you want to add in order to add them to your collection.
+- **Share**: Share your media with others by sharing the media URL.
 <!--
-- **Organize**: Organize your GIF collection with tags and categories.
+- **Organize**: Organize your media collection with tags and categories.
 -->
 
 ## Getting Started
