@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-//import useIsMobile from "../../utils/useIsMobile";
 import CopyOverlay from "./CopyOverlay";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-//import MobileShare from "./MobileShare";
 
 function Reaction(props) {
   const { reaction, id } = props;
   const [isHover, setIsHover] = useState(false);
   const [isGif, setIsGif] = useState(false);
-  //const isMobile = useIsMobile();
 
   useEffect(() => {
     if ((/.gif|.png|.jpg|.webp/.test(reaction.url))) {

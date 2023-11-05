@@ -7,7 +7,17 @@ function CopyOverlay(props) {
   const mediaCTX = useContext(MediaContext);
 
   const urlCopy = () => {
-    navigator.clipboard.writeText(url);
+    // navigator.clipboard.writeText(url);
+    navigator.share({
+      title: "Reactify",
+      text: "Look at this interesting image",
+      url: props.url
+    }).then(() => {
+      // Success
+    }).error((err) => {
+      console.log(err);
+    });
+
   }
   const mediaDelete = () => {
     mediaCTX.onMediaDelete(mediaId);
