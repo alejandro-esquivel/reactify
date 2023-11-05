@@ -12,11 +12,7 @@ function CopyOverlay(props) {
       title: "Reactify",
       text: "Look at this interesting image",
       url: props.url
-    }).then(() => {
-      // Success
-    }).error((err) => {
-      console.log(err);
-    });
+    })
 
   }
   const mediaDelete = () => {
