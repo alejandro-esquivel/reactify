@@ -20,13 +20,13 @@ function CopyOverlay(props) {
 
   return (
     <div
-      className='bg-opacity-50 bg-slate-700 transition duration-75 absolute top-0 left-0 flex flex-row xl:flex-col object-cover w-full h-full p-2 m-0 rounded items-center justify-center bg-clip-content'>
+      className='bg-opacity-50 bg-slate-700 transition duration-75 absolute top-0 left-0 flex flex-col xl:flex-row object-cover w-full h-full p-2 m-0 rounded items-center justify-center bg-clip-content'>
       <button
-        className={`rounded-lg bg-blue-500 text-gray-50 px-4 py-2 hover:ring-blue-300 hover:ring-2 focus:ring-blue-300 focus:ring-2 shadow-lg`}
+        className="rounded-lg bg-blue-500 text-gray-50 px-4 py-2 hover:ring-blue-300 hover:ring-2 focus:ring-blue-300 focus:ring-2 shadow-lg w-7/12 xl:w-auto"
         onClick={urlCopy} onTouchEnd={urlCopy} tabIndex="0">Copy URL
       </button>
       <button
-        className={`ml-4 rounded-lg bg-red-500 text-gray-50 px-4 py-2 hover:ring-red-300 hover:ring-2 focus:ring-blue-300 focus:ring-2 shadow-lg`}
+        className="xl:ml-4 rounded-lg bg-red-500 text-gray-50 px-4 mt-4 xl:mt-0 py-2 hover:ring-red-300 hover:ring-2 focus:ring-blue-300 focus:ring-2 shadow-lg w-7/12 xl:w-auto"
         onClick={mediaDelete} onTouchEnd={mediaDelete} tabIndex="0">Delete Media
       </button>
     </div>

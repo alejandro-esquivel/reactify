@@ -36,8 +36,6 @@ function Reaction(props) {
       {isGif ? <LazyLoadImage src={reaction.url} alt="" className="object-cover w-full h-full rounded"/> :
         <VideoComponent/>}
       {isHover ? <CopyOverlay url={reaction.url} mediaId={id}/> : ''}
-
-      {/*isMobile ? <MobileShare url={reaction.url} /> : <CopyOverlay url={reaction.url} hoverState={isHover} />*/}
     </article>
   )
 }
